@@ -1,38 +1,162 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html {
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+body {
+  font-family: Roboto, sans-serif;
+  background-image: url(./floating-cogs.svg);
   min-height: 100vh;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  max-width: 1024px;
+  flex-grow: 1;
+  padding: 0 15px;
+}
+
+#navigation {
+  min-height: 10vh;
+  width: 100%;
+  background: rgba(125, 185, 92, 0.85);
+  display: flex;
+  justify-content: center;
+  z-index: 10;
+}
+
+#navigation-container{
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
+}
+
+#title {
+  font-size: 2rem;
+  color: #003827;
+}
+
+nav {
+  display: flex;
   align-items: center;
+  height: 30px;
+  border-radius: 5px;
+}
+
+nav ul {
+  display: flex;
+}
+
+nav li {
+  list-style: none;
+  margin-right: 25px;
+  cursor: pointer;
+}
+
+nav li:hover {
+  color: #fff;
+}
+
+#converter {
+  min-height: 75vh;
+  width: 100%;
+  background: rgba(225, 244, 162, 0.85);
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  color: #003827;
 }
 
-.App-link {
-  color: #61dafb;
+#converter-container {
+  padding: 10px 25px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 25px;
+  margin: 15px 0;
+  box-shadow: 0px 1px 20px 1px rgba(0,0,0,0.45);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.headline {
+  font-size: 1.2rem;
+  margin-top: 15px;
+}
+
+#currency-plates {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.plate {
+  min-height: 125px;
+  min-width: 200px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  margin-top: 15px;
+  margin-right: 25px;
+  justify-content: space-between;
+  background-color: rgba(255, 255, 255, 0.75);
+  box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.25);
+}
+
+.plate:last-child {
+  margin-right: 0;
+}
+
+#result {
+  margin: 15px 0;
+  padding: 10px;
+  flex-grow: 1;
+  background-color: rgba(255, 255, 255, 0.75);
+  box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.25);
+}
+
+#result p {
+  margin: 5px;
+}
+
+.currency {
+  font-size: 2rem;
+}
+
+#footer {
+  min-height: 15vh;
+  width: 100%;
+  background: rgba(37, 112, 90, 0.85);
+  display: flex;
+  justify-content: center;
+  color: rgb(226, 225, 225);
+}
+
+#footer-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+#footer-container div {
+  align-self: center;
+}
+
+#footer-container div li {
+  font-size: 1.2rem;
+  list-style: none;
+  cursor: pointer;
+}
+
+#footer-container div li:hover {
+  color: #003827;
 }
