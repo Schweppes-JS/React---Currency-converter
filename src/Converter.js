@@ -1,38 +1,61 @@
 import React from 'react';
 
 class Converter extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            date : '',
+            'currencyRate' : {}
+        }
+        this.currency = ['USD', 'GBP', 'CNY', 'JPY'];
+        this.getRate();
+    }
+    getRate = () => {
+        fetch('https://api.exchangeratesapi.io/latest')
+            .then(data => {
+                return data.json();
+            })
+            .then(data => {
+                console.log(data);
+                this.setState({date : data.date});
+                let result = {};
+                for (let i = 0; i < this.currency.length; i++) {
+                    result[this.currency[i]] = data.rates[this.currency[i]];
+                }
+                console.log(result);
+                this.setState({currencyRate : result})
+            })
+    }
     render() {
         return (
             <div id="converter">
                 <div className="container" id="converter-container">
                     <div id="rate">
-                        <p className="headline">Exchange rate for<span id="date">July 20, 2020</span></p>
+                        <p className="headline">Exchange rate for<span id="date"> {this.state.date}</span></p>
                         <div id="currency-plates">
-                            <div className="plate">
-                                <h4>USD</h4>
-                                <p>1500 kr</p>
-                                <p>1200 kr</p>
-                            </div>
-                            <div className="plate">
-                                <h4>EUR</h4>
-                                <p>1500 kr</p>
-                                <p>1200 kr</p>
+                            {Object.keys(this.state.currencyRate).map((keyName, i) => 
+                            (
+                                <div className="plate" key={keyName}>
+                                    <h4>{keyName}</h4>
+                                    <p>{this.state.currencyRate[keyName].toFixed(2)}</p>
+                                    <p>to 1 EUR</p>
                                 </div>
-                            <div className="plate">
-                                <h4>RUB</h4>
-                                <p>1500 kr</p>
-                                <p>1200 kr</p>
-                                </div>
+                            )
+                            )}
                         </div>
                     </div>
                     <div id="calculator">
                         <p className="headline">Exchange calculator</p>
                         <div id="result">
                             <p>I want</p>
-                            <p><input type="checkbox"></input> buy</p>
-                            <p><input type="checkbox"></input> sell</p>
-                            <input type="text"></input>
-                            <button>USD</button>
+                            <p><input type="radio" defaultValue="0"></input> buy</p>
+                            <p><input type="radio" defaultValue="1"></input> sell</p>
+                            <input type="number" defaultValue='100'></input>
+                            <select>
+                                <option defaultValue='USD'>USD</option>
+                                <option defaultValue='RUB'>RUB</option>
+                                <option defaultValue='EUR'>EUR</option>
+                            </select>
                             <p>Result</p>
                             <p className="currency">EUR = </p>
                             <p className="currency">UAH = </p>

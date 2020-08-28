@@ -5,9 +5,9 @@ import Converter from './Converter.js';
 import Footer from './Footer.js';
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+  // constructor(props) {
+  //   super(props);
+  // }
   render() {
     return (
       <div id="main">
