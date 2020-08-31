@@ -125,10 +125,6 @@ nav li:hover {
   margin: 5px;
 }
 
-.currency {
-  font-size: 2rem;
-}
-
 #footer {
   min-height: 15vh;
   width: 100%;
