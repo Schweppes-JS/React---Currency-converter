@@ -1,4 +1,5 @@
 import React from 'react';
+import './Navigation.css';
 
 class Navigation extends React.Component {
     render() {
@@ -8,9 +9,9 @@ class Navigation extends React.Component {
                     <p id="title">Currency Converter</p>
                     <nav>
                         <ul>
-                            {/* <li><a>Home</a></li>
+                            <li><a>Home</a></li>
                             <li><a>Exchange offices</a></li>
-                            <li><a>Contacts</a></li> */}
+                            <li><a>Contacts</a></li>
                         </ul>
                     </nav>
                 </div>

@@ -1,5 +1,6 @@
 import React from 'react';
-import Calculator from './Calculator.js';
+import Calculator from '../Calculator/Calculator.js';
+import './Converter.css';
 
 class Converter extends React.Component {
     constructor(props) {
@@ -17,7 +18,6 @@ class Converter extends React.Component {
                 return data.json();
             })
             .then(data => {
-                console.log(data);
                 this.setState({date : data.date});
                 let result = {};
                 for (let i = 0; i < this.currency.length; i++) {

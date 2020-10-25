@@ -1,13 +1,10 @@
 import React from 'react';
 import './App.css';
-import Navigation from './Navigation.js';
-import Converter from './Converter.js';
-import Footer from './Footer.js';
+import Navigation from './components/Navigation/Navigation.js';
+import Converter from './components/Converter/Converter.js';
+import Footer from './components/Footer/Footer.js';
 
 class App extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  // }
   render() {
     return (
       <div id="main">

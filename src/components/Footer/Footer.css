@@ -1,0 +1,31 @@
+#footer {
+  min-height: 15vh;
+  width: 100%;
+  background: rgba(37, 112, 90, 0.95);
+  display: flex;
+  justify-content: center;
+  color: rgb(226, 225, 225);
+}
+
+#footer-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+#footer-container div {
+  align-self: center;
+}
+
+#footer-container div li {
+  font-size: 1.2rem;
+  list-style: none;
+  cursor: pointer;
+}
+
+#footer-container div li:hover {
+  color: #003827;
+}
